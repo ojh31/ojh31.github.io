@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+    	<div class="navbar-header">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+    	</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+        	<ul class="nav navbar-nav">
+		        <li><a href="game.html">Game</a></li>
+		        <li class="active"><a href="settings.html">Settings</a></li>
+		        <li><a href="phrases.html">Catchphrases</a></li>
+      		</ul>
+    	</div>
+  	</div>
+</nav>
+  
+<div class="container-fluid text-center" id="mainPage">
+    <div class="row content" id="mainRows">
+        <div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+	    <form>
+            <p>
+                <label for="amount">Duration range:</label>
+                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </p>
+            <div id="durationRange"></div>
+            <!-- <input list="browsers">
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist> --> 
+        </form>
+    	</div>
+    	<div class="col-sm-2 sidenav">
+    	</div>
+    </div>
+</div>
+
+<footer class="footer container-fluid text-center">
+  <p>This project is Open Source.</p>
+</footer>
+
+</body>
+</html>
