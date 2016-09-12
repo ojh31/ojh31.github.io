@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="script.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	</head>
+<body>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+    	<div class="navbar-header">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+    	</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+        	<ul class="nav navbar-nav">
+		        <li class="active"><a href="game.html">Game</a></li>
+		        <li><a href="settings.html">Settings</a></li>
+		        <li><a href="phrases.html">Catchphrases</a></li>
+      		</ul>
+    	</div>
+  	</div>
+</nav>
+  
+<div class="container-fluid text-center" id="mainPage">
+	<div class="row content" id="mainRows">
+    	<div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+	        <h1>Catchphrase</h1>
+	        <p>Press play below when you're ready.</p>
+	        <hr>
+	        <div class="text-center row" id="startMenu">
+	        <button type="button" class="btn btn-default" id="reset">Reset</button>
+	        <button type="button" class="btn btn-default" id="cont">Play</button>
+	        </div>
+	        <div class="text-center" id="gameMenu">
+	        <label id="timer">0.00 seconds</label> <br>
+	        <button type="button" class="btn btn-default" id="next">Next</button>
+	        <p id="phrase"></p>
+	        </div>
+    	</div>
+    	<div class="col-sm-2 sidenav">
+    	</div>
+    </div>
+</div>
+
+<footer class="footer container-fluid text-center">
+  <p>This project is Open Source.</p>
+</footer>
+
+</body>
+</html>
