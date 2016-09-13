@@ -130,7 +130,7 @@ $(document).ready(function(){
     });
     $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
     			       $( "#durationRange" ).slider( "values", 1 ) + "s" );
-    var margin = {top: 20, right: 20, bottom: 30, left: 50},
+    var margin = {top: 20, right: 50, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     var x = d3.scale.linear()
@@ -163,15 +163,18 @@ $(document).ready(function(){
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
+        .text("Duration");
+        .attr("x", 6)
+        .attr("dx", ".71em")
     svg.append("g")
-            .attr("class", "y axis")
-            .call(yAxis)
+        .attr("class", "y axis")
+        .call(yAxis)
         .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end")
-          .text("Price ($)");
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Probability density");
     svg.append("path")
         .datum(data)
         .attr("class", "line")
