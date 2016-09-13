@@ -96,6 +96,17 @@ var reset = function(){
 	$("#cont").show();
 };
 
+var distShow = function(dist){
+    if (dist === "normal"){
+        $("#normal").show();
+    };
+    if (dist === "uniform"){
+        $("#normal").hide();
+    }
+    localStorage.setItem('dist', dist);
+    document.getElementById('dist').value = dist;
+};
+
 // listen for button clicks and keypresses
 $(document).ready(function(){
 	reset();
@@ -133,7 +144,28 @@ $(document).ready(function(){
     });
     $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
     			       $( "#durationRange" ).slider( "values", 1 ) + "s" );
+    $( "#mean" ).slider({
+      value:meanDuration,
+      min: 0,
+      max: 10,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#mean" ).val(ui.value + "s");
+      }
+    });
+    $("#mean").val($( "#meanSlider" ).slider("value"));
+     $( "#sd" ).slider({
+      value:sdDuration,
+      min: 0,
+      max: 10,
+      step: 0.1,
+      slide: function( event, ui ) {
+        $( "#sd" ).val(ui.value + "s");
+      }
+    });
+    $("#sd").val($( "#sdSlider" ).slider("value"));
     showGraph();
+    distShow(localStorage.getItem('dist') ? localStorage.getItem('minDuration') : "uniform");
 });
 
 var showGraph = function(){
