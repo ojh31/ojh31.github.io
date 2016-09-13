@@ -143,11 +143,13 @@
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form id="gform" method="POST" class="pure-form pure-form-stacked"
                     action="https://script.google.com/macros/s/AKfycbx1smNNJUr3DRV-a3Q8i61K507RTY1bS_OkqjCE86dQ-M2AmFU/exec">
-                        <div>
-                          <label for="name">Name: </label>
-                          <input id="name" name="name" placeholder="What your Mom calls you" />
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="name">Name</label>
+                                <input class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
                         </div>
-    
                         <fieldset>
                           <label for="message">Message: </label>
                           <textarea id="message" name="message" rows="10"
@@ -172,13 +174,13 @@
                 
                     </form>
                     <!--<form action="https://script.google.com/macros/s/AKfycbx1smNNJUr3DRV-a3Q8i61K507RTY1bS_OkqjCE86dQ-M2AmFU/exec" id="contactForm" method="POST" enctype="text/plain" novalidate>-->
-                    <!--    <div class="row control-group">-->
-                    <!--        <div class="form-group col-xs-12 floating-label-form-group controls">-->
-                    <!--            <label>Name</label>-->
-                    <!--            <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">-->
-                    <!--            <p class="help-block text-danger"></p>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
                     <!--    <div class="row control-group">-->
                     <!--        <div class="form-group col-xs-12 floating-label-form-group controls">-->
                     <!--            <label>Email Address</label>-->
