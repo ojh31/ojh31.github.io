@@ -126,10 +126,12 @@ $(document).ready(function(){
             localStorage.setItem('minDuration', JSON.stringify(minDuration));
             localStorage.setItem('maxDuration', JSON.stringify(maxDuration));
             $("#amount").val(minDuration + "s - " + maxDuration + "s");
+            showGraph();
       }
     });
     $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
     			       $( "#durationRange" ).slider( "values", 1 ) + "s" );
+    showGraph();
 });
 
 var showGraph = function(){
