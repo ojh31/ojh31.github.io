@@ -39,7 +39,7 @@ function Timer(){
 			$("#startMenu").show();
 			this.ticking = false;
 			if (this.time > this.duration){
-				console.log("You ran out of time.");
+				$("#log").html("You ran out of time.");
 			}
 		}
 	};
@@ -77,7 +77,7 @@ var cont = function(){
 
 var next = function(){
 	if (phrasesLeft.length === 0){
-		console.log("BOOM! You ran out of catchphrases!");
+		$("#log").html("BOOM! You ran out of catchphrases!");
 		$("#cont").hide();
 		timer.stop();
 	}
