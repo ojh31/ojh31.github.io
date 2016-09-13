@@ -165,7 +165,7 @@ $(document).ready(function(){
     });
     $("#sd").val($( "#sdSlider" ).slider("value"));
     showGraph();
-    distShow(localStorage.getItem('dist') ? localStorage.getItem('minDuration') : "uniform");
+    distShow(localStorage.getItem('dist') ? localStorage.getItem('dist') : "uniform");
 });
 
 var showGraph = function(){
