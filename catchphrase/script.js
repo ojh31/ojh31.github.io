@@ -212,7 +212,7 @@ var sqrd = function(x){
 
 var normpdf = function(x, a, b, mu, sigma){
 	if (a <= x && x <= b){
-		return Math.exp(- sqrd(Math.pow((x - mu) / sigma)) / 2) / (Math.sqrt(2 * Math.PI) * sigma);
+		return Math.exp(-0.5 * sqrd((x - mu) / sigma)) / (Math.sqrt(2 * Math.PI) * sigma);
 	}
 	else{
 		return 0;
