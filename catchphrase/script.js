@@ -145,7 +145,7 @@ var showGraph = function(){
             "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
         })
         if (typeof normpdf(t, minDuration, maxDuration, meanDuration, sdDuration) !== "number"){
-            console.log(x);
+            console.log(t);
         }
     }
     var margin = {top: 50, right: 50, bottom: 50, left: 70},
