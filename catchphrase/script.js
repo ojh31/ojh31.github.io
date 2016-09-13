@@ -116,16 +116,16 @@ $(document).ready(function(){
 		}
 	});
 	$("#durationRange").slider({
-      range: true,
-      min: 0,
-      max: 10,
-      values: [minDuration, maxDuration],
-      slide: function(event, ui) {
-      	  minDuration = ui.values[0];
-          maxDuration = ui.values[1];
-          localStorage.setItem('minDuration', JSON.stringify(minDuration));
-          localStorage.setItem('maxDuration', JSON.stringify(maxDuration));
-          $("#amount").val(minDuration + "s - " + maxDuration + "s");
+        range: true,
+      	min: 0,
+        max: 10,
+        values: [minDuration, maxDuration],
+        slide: function(event, ui) {
+      	    minDuration = ui.values[0];
+            maxDuration = ui.values[1];
+            localStorage.setItem('minDuration', JSON.stringify(minDuration));
+            localStorage.setItem('maxDuration', JSON.stringify(maxDuration));
+            $("#amount").val(minDuration + "s - " + maxDuration + "s");
       }
     });
     $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
@@ -211,7 +211,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.close); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#graph").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
