@@ -158,7 +158,7 @@ $(document).ready(function(){
         .attr("class", "x axis")
         .call(xAxis)
         .append("text")
-        // .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height + ")")
         .attr("x", 6)
         .attr("dx", ".71em")
         .style("text-anchor", "start")
