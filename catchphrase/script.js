@@ -139,7 +139,7 @@ $(document).ready(function(){
 var showGraph = function(){
     d3.select("svg").remove();
     var data = [];
-    for (t=minDuration, t<=maxDuration, t+= maxDuration - minDuration / 100){
+    for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
         data.push({
             "x": t,
             "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
