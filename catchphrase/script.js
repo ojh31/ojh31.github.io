@@ -188,6 +188,7 @@ var showGraph = function(){
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("Probability density");
+    console.log(line);
     svg.append("path")
         .datum(data)
         .attr("class", "line")
