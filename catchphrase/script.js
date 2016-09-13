@@ -131,7 +131,7 @@ $(document).ready(function(){
 			 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
 		}
 	});
-	$("#durationRange").slider({
+	$("#rangeSlider").slider({
         range: true,
       	min: 0,
         max: 10,
@@ -141,34 +141,34 @@ $(document).ready(function(){
             maxDuration = ui.values[1];
             localStorage.setItem('minDuration', JSON.stringify(minDuration));
             localStorage.setItem('maxDuration', JSON.stringify(maxDuration));
-            $("#amount").val(minDuration + "s - " + maxDuration + "s");
+            $("#range").val(minDuration + "s - " + maxDuration + "s");
             showGraph();
       }
     });
-    $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
-    			       $( "#durationRange" ).slider( "values", 1 ) + "s" );
-    $( "#mean" ).slider({
-      value:meanDuration,
-      min: 0,
-      max: 10,
-      step: 1,
-      slide: function( event, ui ) {
-        $( "#mean" ).val(ui.value + "s");
-      }
-    });
-    $("#mean").val($( "#meanSlider" ).slider("value"));
-     $( "#sd" ).slider({
-      value:sdDuration,
-      min: 0,
-      max: 10,
-      step: 0.1,
-      slide: function( event, ui ) {
-        $( "#sd" ).val(ui.value + "s");
-      }
-    });
-    $("#sd").val($( "#sdSlider" ).slider("value"));
+    $( "#range" ).val($("#rangeSlider").slider( "values", 0 ) + "s - " + 
+    			       $("#rangeSlider").slider( "values", 1 ) + "s" );
+    // $( "#mean" ).slider({
+    //   value:meanDuration,
+    //   min: 0,
+    //   max: 10,
+    //   step: 1,
+    //   slide: function( event, ui ) {
+    //     $( "#mean" ).val(ui.value + "s");
+    //   }
+    // });
+    // $("#mean").val($( "#meanSlider" ).slider("value"));
+    //  $( "#sd" ).slider({
+    //   value:sdDuration,
+    //   min: 0,
+    //   max: 10,
+    //   step: 0.1,
+    //   slide: function( event, ui ) {
+    //     $( "#sd" ).val(ui.value + "s");
+    //   }
+    // });
+    // $("#sd").val($( "#sdSlider" ).slider("value"));
     showGraph();
-    distShow(localStorage.getItem('dist') ? localStorage.getItem('dist') : "uniform");
+    // distShow(localStorage.getItem('dist') ? localStorage.getItem('dist') : "uniform");
 });
 
 var showGraph = function(){
