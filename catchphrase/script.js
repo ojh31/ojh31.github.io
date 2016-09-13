@@ -133,9 +133,7 @@ $(document).ready(function(){
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-    var formatDate = d3.time.format("%d-%b-%y");
-    
-    var x = d3.time.scale()
+    var x = d3.scale.linear()
         .range([0, width]);
     
     var y = d3.scale.linear()
@@ -158,21 +156,18 @@ $(document).ready(function(){
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var data = [{"date": 0, "close": 93.24}, {"date": 100, "close": 95.35}, {"date": 200, "close": 98.84}];
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain(d3.extent(data, function(d) { return d.close; }));
     
-    d3.tsv("data.tsv", type, function(error, data) {
-      if (error) throw error;
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
     
-      x.domain(d3.extent(data, function(d) { return d.date; }));
-      y.domain(d3.extent(data, function(d) { return d.close; }));
-    
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-    
-      svg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
+    svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
         .append("text")
           .attr("transform", "rotate(-90)")
           .attr("y", 6)
@@ -180,17 +175,11 @@ $(document).ready(function(){
           .style("text-anchor", "end")
           .text("Price ($)");
     
-      svg.append("path")
-          .datum(data)
-          .attr("class", "line")
-          .attr("d", line);
+    svg.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", line);
     });
-    
-    function type(d) {
-      d.date = formatDate.parse(d.date);
-      d.close = +d.close;
-      return d;
-    }
 });
 
 // math
