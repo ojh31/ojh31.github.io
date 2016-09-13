@@ -22,6 +22,8 @@ else{
 	minDuration = 0;
 	maxDuration = 10;
 }
+var meanDuration = 5;
+var sdDuration = 1;
 
 
 function Timer(){
@@ -136,6 +138,13 @@ $(document).ready(function(){
 
 var showGraph = function(){
     d3.select("svg").remove();
+    var data = [];
+    for (t=minDuration, t<=maxDuration, t+= (maxDuration - minDuration) / 100){
+        data.push({
+            "x": t,
+            "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
+        })
+    }
     var margin = {top: 50, right: 50, bottom: 50, left: 70},
     width = $("#settings").width() - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -157,7 +166,6 @@ var showGraph = function(){
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var data = [{"date": 0, "close": 93.24}, {"date": 100, "close": 95.35}, {"date": 200, "close": 98.84}];
     x.domain(d3.extent(data, function(d) { return d.date; }));
     y.domain(d3.extent(data, function(d) { return d.close; }));
     svg.append("g")
