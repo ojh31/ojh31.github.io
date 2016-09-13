@@ -36,19 +36,27 @@
     	</div>
     	<div class="col-sm-8 text-left" id="settings">
 	        <form>
-            <p>
-                <label for="amount">Duration range:</label>
-                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-            </p>
-            <div id="durationRange"></div>
-            <!-- <input list="browsers">
-                <datalist id="browsers">
-                    <option value="Internet Explorer">
-                    <option value="Firefox">
-                    <option value="Chrome">
-                    <option value="Opera">
-                    <option value="Safari">
-                </datalist> --> 
+	            <p>
+	                <label for="amount">Duration range:</label>
+	                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+	            </p>
+            	<div id="durationRange"></div>
+            	<select name="dist" onchange="distShow(this.value)">
+            		<option value="uniform">Uniform</option>
+            		<option value="normal">Uniform</option>
+		        </select>
+		        <div id="normal">
+		            <p>
+                        <label for="mean">Mean duration:</label>
+                        <input type="text" id="mean" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </p>
+                    <div id="meanSlider"></div>
+                    <p>
+                  <label for="amount">Standard deviation of duration</label>
+                  <input type="text" id="sd" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    </p>
+                     <div id="sdSlider"></div>
+		        </div>
         	</form>
         	<div id="graph"></div>
     	</div>
