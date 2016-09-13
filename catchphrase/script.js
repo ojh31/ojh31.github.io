@@ -140,12 +140,12 @@ var showGraph = function(){
     d3.select("svg").remove();
     var data = [];
     for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
-    	console.log(t, normpdf(t, minDuration, maxDuration, meanDuration, sdDuration));
         data.push({
             "x": t,
             "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
         })
     }
+    console.log(data);
     var margin = {top: 50, right: 50, bottom: 50, left: 70},
     width = $("#settings").width() - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
