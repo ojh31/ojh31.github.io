@@ -97,6 +97,7 @@ var reset = function(){
 };
 
 var distShow = function(dist){
+	console.log(dist)
     if (dist === "normal"){
         $("#normal").show();
     }
