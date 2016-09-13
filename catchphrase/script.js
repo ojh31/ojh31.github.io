@@ -142,6 +142,7 @@ var showGraph = function(){
     if (minDuration === maxDuration){
     	var x = minDuration;
     	data = [{"x": x, "y": 0}, {"x": x, "y": 1}];
+    }
     else{
     	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
             data.push({
