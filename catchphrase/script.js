@@ -99,7 +99,7 @@ var reset = function(){
 var distShow = function(dist){
     if (dist === "normal"){
         $("#normal").show();
-    };
+    }
     if (dist === "uniform"){
         $("#normal").hide();
     }
