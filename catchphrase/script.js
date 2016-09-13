@@ -174,7 +174,7 @@ var showGraph = function(){
         .attr("class", "y axis")
         .call(yAxis)
         .append("text")
-        .attr("transform", "rotate(-90) translate(-" + (height/2) + ",-40)")
+        .attr("transform", "rotate(-90) translate(-" + (height/2) + ",-60)")
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
