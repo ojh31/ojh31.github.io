@@ -140,7 +140,8 @@ var showGraph = function(){
     d3.select("svg").remove();
     var data = [];
     if (minDuration === maxDuration){
-    	data = [{"x": 0, "y": 0}, {"x": minDuration, "y": 0}, {"x": minDuration, "y": 1}, {"x": minDuration + 1, "y": 0}];
+    	data = [{"x": 0, "y": 0}, {"x": minDuration, "y": 0}, {"x": minDuration, "y": 1}, {"x": minDuration, "y": 0},
+    		{"x": minDuration + 1, "y": 0}];
     }
     else{
     	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
