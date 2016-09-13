@@ -130,6 +130,9 @@ $(document).ready(function(){
     });
     $( "#amount" ).val($( "#durationRange" ).slider( "values", 0 ) + "s - " + 
     			       $( "#durationRange" ).slider( "values", 1 ) + "s" );
+});
+
+var showGraph = function(){
     var margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -149,7 +152,7 @@ $(document).ready(function(){
     var svg = d3.select("#graph").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-      .append("g")
+        .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     var data = [{"date": 0, "close": 93.24}, {"date": 100, "close": 95.35}, {"date": 200, "close": 98.84}];
     x.domain(d3.extent(data, function(d) { return d.date; }));
@@ -177,7 +180,7 @@ $(document).ready(function(){
         .datum(data)
         .attr("class", "line")
         .attr("d", line);
-});
+};
 
 // math
 var sgn = function(x){
