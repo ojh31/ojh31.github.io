@@ -97,7 +97,7 @@ var reset = function(){
 };
 
 var distShow = function(dist){
-	console.log(dist)
+    console.log(dist);
     if (dist === "normal"){
         $("#normal").show();
     }
@@ -105,7 +105,9 @@ var distShow = function(dist){
         $("#normal").hide();
     }
     localStorage.setItem('dist', dist);
+    console.log("before");
     document.getElementById('dist').value = dist;
+    console.log("after");
 };
 
 // listen for button clicks and keypresses
