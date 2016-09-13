@@ -139,11 +139,15 @@ $(document).ready(function(){
 var showGraph = function(){
     d3.select("svg").remove();
     var data = [];
-    for (t=minDuration; t<maxDuration; t+= (maxDuration - minDuration) / 100){
-        data.push({
-            "x": t,
-            "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
-        })
+    if (minDuration === maxDuration){
+    	var x = minDuration;
+    	data = [{"x": x, "y": 0}, {"x": x, "y": 1}];
+    else{
+    	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
+            data.push({
+                "x": t,
+                "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
+            });
     }
     console.log(data);
     var margin = {top: 50, right: 50, bottom: 50, left: 70},
