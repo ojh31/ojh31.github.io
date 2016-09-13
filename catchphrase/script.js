@@ -159,12 +159,10 @@ $(document).ready(function(){
     var data = [{"date": 0, "close": 93.24}, {"date": 100, "close": 95.35}, {"date": 200, "close": 98.84}];
     x.domain(d3.extent(data, function(d) { return d.date; }));
     y.domain(d3.extent(data, function(d) { return d.close; }));
-    
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
-    
     svg.append("g")
             .attr("class", "y axis")
             .call(yAxis)
@@ -174,12 +172,10 @@ $(document).ready(function(){
           .attr("dy", ".71em")
           .style("text-anchor", "end")
           .text("Price ($)");
-    
     svg.append("path")
         .datum(data)
         .attr("class", "line")
         .attr("d", line);
-    });
 });
 
 // math
