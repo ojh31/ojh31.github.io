@@ -162,10 +162,10 @@ $(document).ready(function(){
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(xAxis)
         .text("Duration");
         .attr("x", 6)
-        .attr("dx", ".71em")
+        .attr("dx", ".71em");
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
