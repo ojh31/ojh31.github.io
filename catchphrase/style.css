@@ -42,24 +42,19 @@ footer {
 #mainRows{
     height: 100%;
 }
-path {
-	stroke: steelblue;
-	stroke-width: 1;
-	fill: none;
-}
-.axis {
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
   shape-rendering: crispEdges;
 }
-.x.axis line {
-  stroke: lightgrey;
-}
-.x.axis .minor {
-  stroke-opacity: .5;
-}
+
 .x.axis path {
   display: none;
 }
-.y.axis line, .y.axis path {
+
+.line {
   fill: none;
-  stroke: #000;
+  stroke: steelblue;
+  stroke-width: 1.5px;
 }
