@@ -140,8 +140,7 @@ var showGraph = function(){
     d3.select("svg").remove();
     var data = [];
     if (minDuration === maxDuration){
-    	var x = minDuration;
-    	data = [{"x": x, "y": 0}, {"x": x, "y": 1}];
+    	data = [{"x": minDuration, "y": 0}, {"x": minDuration, "y": 1}];
     }
     else{
     	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
@@ -149,6 +148,7 @@ var showGraph = function(){
                 "x": t,
                 "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
             });
+    	}
     }
     console.log(data);
     var margin = {top: 50, right: 50, bottom: 50, left: 70},
