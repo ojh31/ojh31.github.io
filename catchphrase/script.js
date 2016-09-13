@@ -64,7 +64,7 @@ var uploadFile = function(event) {
     	localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
     };
     reader.readAsText(input.files[0]);
-    $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("\n"));
+    $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
 };
 
 var timer;
@@ -98,7 +98,7 @@ var reset = function(){
 $(document).ready(function(){
 	reset();
 	console.log("Hello, nerds!");
-	 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("\n"));
+	 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
 	$("#gameMenu").hide();
 	$("#reset").hide();
 	$("#cont").click(cont);
@@ -112,7 +112,7 @@ $(document).ready(function(){
 			phrasesTotal.push(newPhrase);
 			phrasesLeft.push(newPhrase);
 			localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
-			 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("\n"));
+			 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
 		}
 	});
 	$("#durationRange").slider({
