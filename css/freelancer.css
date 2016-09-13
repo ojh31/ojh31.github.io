@@ -370,6 +370,7 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-success {
+  border-width: 3px;
   color: #2C3E50;
   background-color: white;
   border-color: #3399ff;
