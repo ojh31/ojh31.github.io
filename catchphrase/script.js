@@ -136,7 +136,7 @@ $(document).ready(function(){
 
 var showGraph = function(){
     d3.select("svg").remove();
-    var margin = {top: 50, right: 50, bottom: 50, left: 50},
+    var margin = {top: 50, right: 50, bottom: 50, left: 70},
     width = $("#settings").width() - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     var x = d3.scale.linear()
