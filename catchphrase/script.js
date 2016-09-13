@@ -163,9 +163,11 @@ $(document).ready(function(){
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis)
-        .text("Duration")
+        .append("text")
         .attr("x", 6)
-        .attr("dx", ".71em");
+        .attr("dx", ".71em")
+        .style("text-anchor", "end")
+        .text("Duration");
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis)
