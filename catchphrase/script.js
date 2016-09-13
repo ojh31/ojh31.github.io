@@ -64,6 +64,7 @@ var uploadFile = function(event) {
     	localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
     };
     reader.readAsText(input.files[0]);
+    $("#phrases").html(phrasesTotal);
 };
 
 var timer;
@@ -96,7 +97,8 @@ var reset = function(){
 // listen for button clicks and keypresses
 $(document).ready(function(){
 	reset();
-	console.log("Hello, nerds!");	
+	console.log("Hello, nerds!");
+	$("#phrases").html(phrasesTotal);
 	$("#gameMenu").hide();
 	$("#reset").hide();
 	$("#cont").click(cont);
@@ -110,6 +112,7 @@ $(document).ready(function(){
 			phrasesTotal.push(newPhrase);
 			phrasesLeft.push(newPhrase);
 			localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
+			$("#phrases").html(phrasesTotal);
 		}
 	});
 	$("#durationRange").slider({
