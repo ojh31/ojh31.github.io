@@ -370,8 +370,8 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-success {
-  color: white;
-  background-color: #3399ff;
+  color: #2C3E50;
+  background-color: white;
   border-color: #3399ff;
   font-weight: 700;
 }
