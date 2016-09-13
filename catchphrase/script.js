@@ -64,7 +64,7 @@ var uploadFile = function(event) {
     	localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
     };
     reader.readAsText(input.files[0]);
-    $("#phrases").html(phrasesTotal);
+    $("#phrases").html(phrasesTotal.join());
 };
 
 var timer;
@@ -98,7 +98,7 @@ var reset = function(){
 $(document).ready(function(){
 	reset();
 	console.log("Hello, nerds!");
-	$("#phrases").html(phrasesTotal);
+	$("#phrases").html(phrasesTotal.join());
 	$("#gameMenu").hide();
 	$("#reset").hide();
 	$("#cont").click(cont);
@@ -112,7 +112,7 @@ $(document).ready(function(){
 			phrasesTotal.push(newPhrase);
 			phrasesLeft.push(newPhrase);
 			localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
-			$("#phrases").html(phrasesTotal);
+			$("#phrases").html(phrasesTotal.join());
 		}
 	});
 	$("#durationRange").slider({
