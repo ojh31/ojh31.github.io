@@ -66,9 +66,11 @@ var reset = function(){
 };
 
 $(document).ready(function(){
-    reset();
     $("#gameMenu").hide();
 	$("#reset").hide();
+	$("#log").html("");
+	$("#cont").html("Play");
+    	$("#cont").show();
 	$("#cont").click(cont);
 	$("#next").click(next);
 	$("#reset").click(reset);
