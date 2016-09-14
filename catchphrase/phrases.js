@@ -1,5 +1,4 @@
 //upload file callback
-
 var uploadFile = function(event) {
     var input = event.target;
     var reader = new FileReader();
@@ -11,6 +10,13 @@ var uploadFile = function(event) {
     };
     reader.readAsText(input.files[0]);
     $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
+};
+
+// clear phrases button callback
+var resetPhrases = function(){
+	localStorage.removeItem("phrasesSaved");
+	phrasesLeft = [];
+	phrasesTotal = [];
 };
 
 // listen for added phrase
