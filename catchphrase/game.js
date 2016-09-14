@@ -55,11 +55,14 @@ var next = function(){
 };
 
 var reset = function(){
-	phrasesLeft = phrasesTotal.slice();
-	$("#reset").hide();
-	$("#log").html("");
-	$("#cont").html("Play");
-	$("#cont").show();
+	var response = confirm("Are you sure you want to reset your progress through the pack?");
+	if (response === true){
+	    phrasesLeft = phrasesTotal.slice();
+    	$("#reset").hide();
+    	$("#log").html("");
+    	$("#cont").html("Play");
+    	$("#cont").show();	
+	}
 };
 
 $(document).ready(function(){
