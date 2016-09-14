@@ -17,6 +17,7 @@ var resetPhrases = function(){
 	localStorage.removeItem("phrasesSaved");
 	phrasesLeft = [];
 	phrasesTotal = [];
+	$("#phrases").html("");
 };
 
 // listen for added phrase
