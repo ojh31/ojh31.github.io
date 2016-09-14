@@ -1,6 +1,14 @@
 function Timer(){
 	// pick random duration after which end the current game
-	this.duration = Math.random() * (maxDuration - minDuration) + minDuration;
+	if (localStorage.getItem('dist') === "normal"){
+	    console.log(this);
+		this.duration = normrv(minDuration, maxDuration, meanDuration, sdDuration);
+	}
+	else{
+	    console.log(this);
+		this.duration = uniform(minDuration, maxDuration);
+	}
+	
 	console.log(this.duration);
 	this.tick = function(){
 		this.time = (Date.now() - this.startTime) / 1000;
