@@ -36,10 +36,17 @@
     	<div class="col-sm-2 sidenav">
     	</div>
     	<div class="col-sm-8 text-left">
-    		<br>
+    		<h1>Catchphrases</h1>
+	        <p>
+	        	You can add catchphrases individually in the text box by endin each word with a carriage return.
+	        	You can also upload a text file of catchphrases separated by new lines.
+	        	The uploaded catchphrases can be seen listed and can be cleared below.
+	        </p>
+	        <hr>
 	        <label>New catchphrase:</label><input type="text" id="newPhrase" value="Type here..." /> <br>
 		<label>Upload file:</label><input type="file" id="phraseFile" onchange="uploadFile(event)"></input> <br>
 		<label>List of catchphrases:</label><p id="phrases"></p>
+		<button type="button" class="btn btn-default" onclick="resetPhrases()">Clear catchphrases</button>
     	</div>
     	<div class="col-sm-2 sidenav">
     	</div>
