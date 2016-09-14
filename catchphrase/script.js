@@ -96,4 +96,3 @@ var normrv = function(a, b, mu, sigma){
 var uniform = function(a, b){
 	return Math.random() * (b - a) + a;
 };
-}
