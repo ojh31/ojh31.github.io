@@ -13,6 +13,7 @@ function Timer(){
 		$("#cont").html("Continue");
 		if (this.time > this.duration || !(this.ticking)){
 			clearInterval(this.interval);
+			phrasesLeft.push(nextPhrase);
 			$("#gameMenu").hide();
 			$("#startMenu").show();
 			this.ticking = false;
@@ -41,6 +42,7 @@ var cont = function(){
 	next();
 };
 
+var nextPhrase;
 var next = function(){
 	if (phrasesLeft.length === 0){
 		$("#log").html("BOOM! You ran out of catchphrases!");
@@ -48,7 +50,7 @@ var next = function(){
 		timer.stop();
 	}
 	var idx = Math.floor(Math.random() * phrasesLeft.length);
-	var nextPhrase = phrasesLeft.splice(idx, 1)[0];
+	nextPhrase = phrasesLeft.splice(idx, 1)[0];
 	$("#phrase").html(nextPhrase);
 };
 
