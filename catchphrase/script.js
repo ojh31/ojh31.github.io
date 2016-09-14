@@ -22,8 +22,18 @@ else{
 	minDuration = 0;
 	maxDuration = 10;
 }
-var meanDuration = 5;
-var sdDuration = 1;
+var savedMean = JSON.parse(localStorage.getItem('meanDuration'));
+var savedSd = JSON.parse(localStorage.getItem('sdDuration'));
+var meanDuration;
+var sdDuration;
+if (savedMean && savedSd){
+	meanDuration = savedMean;
+	sdDuration = savedSd;
+}
+else{
+	meanDuration = 5;
+	sdDuration = 1;
+}
 
 
 function Timer(){
