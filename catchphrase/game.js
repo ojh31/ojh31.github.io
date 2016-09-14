@@ -1,15 +1,11 @@
 function Timer(){
 	// pick random duration after which end the current game
 	if (localStorage.getItem('dist') === "normal"){
-	    console.log(this);
 		this.duration = normrv(minDuration, maxDuration, meanDuration, sdDuration);
 	}
 	else{
-	    console.log(this);
 		this.duration = uniform(minDuration, maxDuration);
 	}
-	
-	console.log(this.duration);
 	this.tick = function(){
 		this.time = (Date.now() - this.startTime) / 1000;
 		$('#timer').html(this.time.toFixed(2) + " seconds");
@@ -40,6 +36,7 @@ var cont = function(){
 	$("#startMenu").hide();
 	$("#gameMenu").show();
 	timer = new Timer();
+	console.log(timer);
 	timer.start();
 	next();
 };
@@ -58,6 +55,7 @@ var next = function(){
 var reset = function(){
 	phrasesLeft = phrasesTotal.slice();
 	$("#reset").hide();
+	$("#log").html("");
 	$("#cont").html("Play");
 	$("#cont").show();
 };
