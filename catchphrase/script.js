@@ -97,7 +97,6 @@ var reset = function(){
 };
 
 var distShow = function(dist){
-    console.log(dist);
     if (dist === "normal"){
         $("#normal").show();
     }
@@ -105,9 +104,7 @@ var distShow = function(dist){
         $("#normal").hide();
     }
     localStorage.setItem('dist', dist);
-    console.log("before");
     document.getElementById('dist').value = dist;
-    console.log("after");
 };
 
 // listen for button clicks and keypresses
@@ -147,26 +144,26 @@ $(document).ready(function(){
     });
     $( "#range" ).val($("#rangeSlider").slider( "values", 0 ) + "s - " + 
     			       $("#rangeSlider").slider( "values", 1 ) + "s" );
-    // $( "#mean" ).slider({
-    //   value:meanDuration,
-    //   min: 0,
-    //   max: 10,
-    //   step: 1,
-    //   slide: function( event, ui ) {
-    //     $( "#mean" ).val(ui.value + "s");
-    //   }
-    // });
-    // $("#mean").val($( "#meanSlider" ).slider("value"));
-    //  $( "#sd" ).slider({
-    //   value:sdDuration,
-    //   min: 0,
-    //   max: 10,
-    //   step: 0.1,
-    //   slide: function( event, ui ) {
-    //     $( "#sd" ).val(ui.value + "s");
-    //   }
-    // });
-    // $("#sd").val($( "#sdSlider" ).slider("value"));
+     $( "#mean" ).slider({
+       value:meanDuration,
+       min: 0,
+       max: 10,
+       step: 1,
+       slide: function( event, ui ) {
+         $( "#mean" ).val(ui.value + "s");
+       }
+     });
+     $("#mean").val($( "#meanSlider" ).slider("value"));
+      $( "#sd" ).slider({
+       value:sdDuration,
+       min: 0,
+       max: 10,
+       step: 0.1,
+       slide: function( event, ui ) {
+         $( "#sd" ).val(ui.value + "s");
+       }
+     });
+     $("#sd").val($( "#sdSlider" ).slider("value"));
     showGraph();
      distShow(localStorage.getItem('dist') ? localStorage.getItem('dist') : "uniform");
 });
