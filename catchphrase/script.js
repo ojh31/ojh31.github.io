@@ -181,6 +181,10 @@ var showGraph = function(){
     	data = [{"x": 0, "y": 0}, {"x": minDuration, "y": 0}, {"x": minDuration, "y": 1}, {"x": minDuration, "y": 0},
     		{"x": minDuration * 2, "y": 0}];
     }
+    else if (sdDuration === 0 && minDuration <= meanDuration && meanDuration <= maxDuration){
+    	data = [{"x": 0, "y": 0}, {"x": meanDuration, "y": 0}, {"x": meanDuration, "y": 1}, {"x": meanDuration, "y": 0},
+    		{"x": meanDuration * 2, "y": 0}];
+    }
     else{
     	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
             data.push({
@@ -255,8 +259,11 @@ var sqrd = function(x){
 };
 
 var normpdf = function(x, a, b, mu, sigma){
-	if (a <= x && x <= b){
+	if (a <= x && x <= b && sigma !== 0){
 		return Math.exp(-0.5 * sqrd((x - mu) / sigma)) / (Math.sqrt(2 * Math.PI) * sigma);
+	}
+	else if (sigma === 0 && x === mu){
+		return 1
 	}
 	else{
 		return 0;
