@@ -166,7 +166,7 @@ $(document).ready(function(){
          showGraph();
        }
      });
-     $("#mean").val($( "#meanSlider" ).slider("value"));
+     $("#mean").val($( "#meanSlider" ).slider("value") + "s");
       $( "#sdSlider" ).slider({
        value:sdDuration,
        min: 0,
@@ -179,7 +179,7 @@ $(document).ready(function(){
          showGraph();
        }
      });
-     $("#sd").val($( "#sdSlider" ).slider("value"));
+     $("#sd").val($( "#sdSlider" ).slider("value") + "s");
     showGraph();
      distShow(localStorage.getItem('dist') ? localStorage.getItem('dist') : "uniform");
 });
