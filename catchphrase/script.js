@@ -144,23 +144,29 @@ $(document).ready(function(){
     });
     $( "#range" ).val($("#rangeSlider").slider( "values", 0 ) + "s - " + 
     			       $("#rangeSlider").slider( "values", 1 ) + "s" );
-     $( "#mean" ).slider({
+     $( "#meanSlider" ).slider({
        value:meanDuration,
        min: 0,
        max: 10,
        step: 1,
        slide: function( event, ui ) {
+       	meanDuration = ui.value;
+       	localStorage.setItem('meanDuration', JSON.stringify(meanDuration));
          $( "#mean" ).val(ui.value + "s");
+         showGraph();
        }
      });
      $("#mean").val($( "#meanSlider" ).slider("value"));
-      $( "#sd" ).slider({
+      $( "#sdSlider" ).slider({
        value:sdDuration,
        min: 0,
        max: 10,
        step: 0.1,
        slide: function( event, ui ) {
+       	sdDuration = ui.value;
+       	localStorage.setItem('sdDuration', JSON.stringify(sdDuration));
          $( "#sd" ).val(ui.value + "s");
+         showGraph();
        }
      });
      $("#sd").val($( "#sdSlider" ).slider("value"));
