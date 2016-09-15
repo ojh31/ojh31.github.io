@@ -4,8 +4,8 @@ var savedPhrasesTotal = JSON.parse(localStorage.getItem('phrasesTotal'));
 var phrasesLeft;
 var phrasesTotal;
 if ($.isArray(savedPhrasesLeft) && $.isArray(savedPhrasesTotal)){
-	phrasesLeft = savedPhrases.slice();
-	phrasesTotal = savedPhrases.slice();
+	phrasesLeft = savedPhrasesLeft.slice();
+	phrasesTotal = savedPhrasesTotal.slice();
 }
 else{
 	phrasesLeft = [];
