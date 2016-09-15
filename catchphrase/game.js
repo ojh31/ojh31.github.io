@@ -1,3 +1,5 @@
+var boom = new Audio('boom.aiff');
+
 function Timer(){
 	// pick random duration after which end the current game
 	if (localStorage.getItem('dist') === "normal"){
@@ -18,8 +20,9 @@ function Timer(){
 			$("#startMenu").show();
 			this.ticking = false;
 			if (this.time > this.duration){
-				$("#log").html("You ran out of time.");
+				$("#log").html("BOOM! You ran out of time.");
 			}
+			boom.play();
 		}
 	};
 	this.stop = function(){
