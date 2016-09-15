@@ -75,7 +75,7 @@ var reset = function(){
 };
 
 $(document).ready(function(){
-	if (phrasesLeft === phrasesTotal){
+	if (_.isEqual(phrasesLeft, phrasesTotal)){
 		$("#reset").hide();	
 		$("#cont").html("Play")
 	}
