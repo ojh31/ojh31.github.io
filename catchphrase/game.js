@@ -1,4 +1,4 @@
-var boom = new Audio('boom.aiff');
+var boom = new Audio('boom.mp3');
 
 function Timer(){
 	// pick random duration after which end the current game
