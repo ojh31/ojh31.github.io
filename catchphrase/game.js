@@ -16,6 +16,7 @@ function Timer(){
 		if (this.time > this.duration || !(this.ticking)){
 			clearInterval(this.interval);
 			phrasesLeft.push(nextPhrase);
+			localStorage.setItem('phrasesLeft', JSON.stringify(phrasesLeft));
 			$("#gameMenu").hide();
 			$("#startMenu").show();
 			this.ticking = false;
@@ -55,6 +56,7 @@ var next = function(){
 	var idx = Math.floor(Math.random() * phrasesLeft.length);
 	nextPhrase = phrasesLeft.splice(idx, 1)[0];
 	$("#phrase").html(nextPhrase);
+	localStorage.setItem('phrasesLeft', JSON.stringify(phrasesLeft));
 };
 
 var skip = function(){
