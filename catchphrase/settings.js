@@ -21,7 +21,7 @@ var showGraph = function(){
     		{"x": meanDuration * 2, "y": 0}];
     }
     else{
-    	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 100){
+    	for (t=minDuration; t<=maxDuration; t+= (maxDuration - minDuration) / 1000){
             data.push({
                 "x": t,
                 "y": normpdf(t, minDuration, maxDuration, meanDuration, sdDuration)
