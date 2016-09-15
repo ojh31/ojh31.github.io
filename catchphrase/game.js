@@ -75,11 +75,17 @@ var reset = function(){
 };
 
 $(document).ready(function(){
-    $("#gameMenu").hide();
-	$("#reset").hide();
+	if (phrasesLeft === phrasesTotal){
+		$("#reset").hide();	
+		$("#cont").html("Play")
+	}
+	else{
+		$("#reset").show();
+		$("#cont").html("Continue");
+	}
+	$("#gameMenu").hide();
+	$("#cont").show();
 	$("#log").html("");
-	$("#cont").html("Play");
-    	$("#cont").show();
 	$("#cont").click(cont);
 	$("#next").click(next);
 	$("#reset").click(reset);
