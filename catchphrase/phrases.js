@@ -6,7 +6,8 @@ var uploadFile = function(event) {
     	var text = reader.result;
     	phrasesLeft = phrasesLeft.concat(text.split("\n"));
     	phrasesTotal = phrasesTotal.concat(text.split("\n"));
-    	localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
+    	localStorage.setItem('phrasesLeft', JSON.stringify(phrasesLeft));
+    	localStorage.setItem('phrasesTotal', JSON.stringify(phrasesTotal));
     };
     reader.readAsText(input.files[0]);
     $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
@@ -31,7 +32,8 @@ $(document).ready(function(){
 			document.getElementById("newPhrase").value = "";
 			phrasesTotal.push(newPhrase);
 			phrasesLeft.push(newPhrase);
-			localStorage.setItem('savedPhrases', JSON.stringify(phrasesTotal));
+			localStorage.setItem('phrasesTotal', JSON.stringify(phrasesTotal));
+			localStorage.setItem('phrasesLeft', JSON.stringify(phrasesLeft));
 			 $("#phrases").html(phrasesTotal.reverse().slice(0,20).join("<br>"));
 		}
 	});
