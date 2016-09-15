@@ -69,6 +69,7 @@ var reset = function(){
 	var response = confirm("Are you sure you want to reset your progress through the pack?");
 	if (response === true){
 	    phrasesLeft = phrasesTotal.slice();
+	    localStorage.setItem('phrasesLeft', JSON.stringify(phrasesLeft));
     	$("#reset").hide();
     	$("#log").html("");
     	$("#cont").html("Play");
