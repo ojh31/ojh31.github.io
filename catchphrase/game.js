@@ -54,6 +54,12 @@ var next = function(){
 	$("#phrase").html(nextPhrase);
 };
 
+var skip = function(){
+	var skippedPhrase = nextPhrase;
+	next()
+	phrasesLeft.push(skippedPhrase);
+}
+
 var reset = function(){
 	var response = confirm("Are you sure you want to reset your progress through the pack?");
 	if (response === true){
