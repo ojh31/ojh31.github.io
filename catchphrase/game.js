@@ -56,7 +56,7 @@ var next = function(){
 
 var skip = function(){
 	var skippedPhrase = nextPhrase;
-	next()
+	next();
 	phrasesLeft.push(skippedPhrase);
 }
 
