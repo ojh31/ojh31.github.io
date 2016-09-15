@@ -79,7 +79,7 @@ $(document).ready(function(){
   $("#rangeSlider").slider({
         range: true,
       	min: 0,
-        max: 10,
+        max: 120,
         values: [minDuration, maxDuration],
         slide: function(event, ui) {
       	    minDuration = ui.values[0];
@@ -95,7 +95,7 @@ $(document).ready(function(){
      $( "#meanSlider" ).slider({
        value:meanDuration,
        min: 0,
-       max: 10,
+       max: 120,
        step: 1,
        slide: function( event, ui ) {
        	meanDuration = ui.value;
@@ -108,7 +108,7 @@ $(document).ready(function(){
       $( "#sdSlider" ).slider({
        value:sdDuration,
        min: 0,
-       max: 10,
+       max: 12,
        step: 0.1,
        slide: function( event, ui ) {
        	sdDuration = ui.value;
