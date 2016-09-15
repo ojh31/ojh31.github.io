@@ -1,8 +1,9 @@
 // read local Storage
-var savedPhrases = JSON.parse(localStorage.getItem('savedPhrases'));
+var savedPhrasesLeft = JSON.parse(localStorage.getItem('phrasesLeft'));
+var savedPhrasesTotal = JSON.parse(localStorage.getItem('phrasesTotal'));
 var phrasesLeft;
 var phrasesTotal;
-if ($.isArray(savedPhrases)){
+if ($.isArray(savedPhrasesLeft) && $.isArray(savedPhrasesTotal)){
 	phrasesLeft = savedPhrases.slice();
 	phrasesTotal = savedPhrases.slice();
 }
