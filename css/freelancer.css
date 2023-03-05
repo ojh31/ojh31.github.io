@@ -504,3 +504,6 @@ fieldset[disabled] .btn-success.active {
   opacity: 0;
   display: none;
 }
+#headshot-img {
+    height: 500px;
+}
